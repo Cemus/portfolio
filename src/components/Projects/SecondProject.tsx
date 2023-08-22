@@ -2,13 +2,13 @@ import placeHolder from "../../assets/bzeignou.jpg";
 import {
   ViteIcon,
   ReactIcon,
-  JavascriptIcon,
+  JavaScriptIcon,
   SassIcon,
 } from "../Icones/Icones";
 
 export default function SecondProject() {
   return (
-    <div className="flex flex-row items-center justify-around">
+    <article className="flex flex-row items-center justify-around">
       <div className="max-w-[50%]">
         <h3 className="text-2xl my-4 font-semibold">Project Name</h3>
         <p className="my-2">
@@ -31,18 +31,24 @@ export default function SecondProject() {
         <div className="flex">
           <ViteIcon />
           <ReactIcon />
-          <JavascriptIcon />
+          <JavaScriptIcon />
           <SassIcon />
         </div>
       </div>
       <div className="text-black flex flex-col gap-5 ">
-        <button className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2">
+        <a
+          href="#"
+          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
+        >
           Watch it live
-        </button>
-        <button className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2">
+        </a>
+        <a
+          href="#"
+          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
+        >
           Code
-        </button>
+        </a>
       </div>
-    </div>
+    </article>
   );
 }

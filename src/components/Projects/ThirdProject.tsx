@@ -2,20 +2,26 @@ import placeHolder from "../../assets/bzeignou.jpg";
 import {
   CssIcon,
   HtmlIcon,
-  JavascriptIcon,
+  JavaScriptIcon,
   WebpackIcon,
 } from "../Icones/Icones";
 
 export default function ThirdProject() {
   return (
-    <div className="flex flex-row items-center justify-around">
+    <article className="flex flex-row items-center justify-around">
       <div className="text-black flex flex-col gap-5 ">
-        <button className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2">
+        <a
+          href="#"
+          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
+        >
           Watch it live
-        </button>
-        <button className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2">
+        </a>
+        <a
+          href="#"
+          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
+        >
           Code
-        </button>
+        </a>
       </div>
       <div className="max-w-[50%]">
         <h3 className="text-2xl my-4 font-semibold">Project Name</h3>
@@ -40,9 +46,9 @@ export default function ThirdProject() {
           <WebpackIcon />
           <HtmlIcon />
           <CssIcon />
-          <JavascriptIcon />
+          <JavaScriptIcon />
         </div>
       </div>
-    </div>
+    </article>
   );
 }

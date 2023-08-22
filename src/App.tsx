@@ -7,8 +7,11 @@ function App() {
   return (
     <div className=" bg-gradient-to-r from-zinc-800 to-zinc-900">
       <Header />
-      <Hero />
-      <ProjectsSection />
+      <main>
+        <Hero />
+        <ProjectsSection />
+      </main>
+      <footer></footer>
     </div>
   );
 }
