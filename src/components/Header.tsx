@@ -6,7 +6,7 @@ export default function Header() {
     setSelectedSection(section);
   };
   return (
-    <header className=" sticky top-0 backdrop-blur-sm flex items-center justify-between p-5 bg-[rgba(1,1,1,.7)]">
+    <header className=" sticky top-0 backdrop-blur-sm flex items-center justify-between p-5 bg-black bg-opacity-70">
       <svg
         className="mx-2"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@ export default function Header() {
         <ul
           className={`cursor-pointer ${
             selectedSection === "home"
-              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-white after:mx-auto after:my-0 after:animate-glimmer animate-none duration-250  "
-              : "select-none opacity-60 hover:opacity-80 animate-none duration-500 "
+              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-mBrand after:mx-auto after:my-0 after:animate-glimmer animate-none duration-200  "
+              : "select-none opacity-60 hover:opacity-90 animate-none duration-200"
           }`}
           onClick={() => handleSectionClick("home")}
         >
@@ -36,8 +36,8 @@ export default function Header() {
         <ul
           className={`cursor-pointer ${
             selectedSection === "projects"
-              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-white after:mx-auto after:my-0 after:animate-glimmer animate-none duration-250  "
-              : "select-none opacity-60 hover:opacity-90 animate-none duration-500"
+              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-mBrand after:mx-auto after:my-0 after:animate-glimmer animate-none duration-200  "
+              : "select-none opacity-60 hover:opacity-90 animate-none duration-200"
           }`}
           onClick={() => handleSectionClick("projects")}
         >
@@ -47,8 +47,8 @@ export default function Header() {
         <ul
           className={`cursor-pointer ${
             selectedSection === "about"
-              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-white after:mx-auto after:my-0 after:animate-glimmer animate-none duration-250  "
-              : "select-none opacity-60 hover:opacity-90 animate-none duration-500"
+              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-mBrand after:mx-auto after:my-0 after:animate-glimmer animate-none duration-200  "
+              : "select-none opacity-60 hover:opacity-90 animate-none duration-200"
           }`}
           onClick={() => handleSectionClick("about")}
         >
@@ -58,8 +58,8 @@ export default function Header() {
         <ul
           className={`cursor-pointer ${
             selectedSection === "contacts"
-              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-white after:mx-auto after:my-0 after:animate-glimmer animate-none duration-250  "
-              : "select-none opacity-60 hover:opacity-90 animate-none duration-500"
+              ? "select-none after:block after:rounded-xl after:w-2 after:h-2 after:bg-mBrand after:mx-auto after:my-0 after:animate-glimmer animate-none duration-200  "
+              : "select-none opacity-60 hover:opacity-90 animate-none duration-200"
           }`}
           onClick={() => handleSectionClick("contacts")}
         >

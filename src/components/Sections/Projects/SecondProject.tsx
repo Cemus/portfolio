@@ -1,28 +1,14 @@
-import placeHolder from "../../assets/bzeignou.jpg";
+import placeHolder from "../../../assets/bzeignou.jpg";
 import {
-  CssIcon,
-  HtmlIcon,
+  ViteIcon,
+  ReactIcon,
   JavaScriptIcon,
-  WebpackIcon,
-} from "../Icones/Icones";
+  SassIcon,
+} from "../../Icones/Icones";
 
-export default function ThirdProject() {
+export default function SecondProject() {
   return (
     <article className="flex flex-row items-center justify-around">
-      <div className="text-black flex flex-col gap-5 ">
-        <a
-          href="#"
-          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
-        >
-          Watch it live
-        </a>
-        <a
-          href="#"
-          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
-        >
-          Code
-        </a>
-      </div>
       <div className="max-w-[50%]">
         <h3 className="text-2xl my-4 font-semibold">Project Name</h3>
         <p className="my-2">
@@ -43,11 +29,25 @@ export default function ThirdProject() {
         </h3>
         <p>In this project, I used the following technologies:</p>
         <div className="flex">
-          <WebpackIcon />
-          <HtmlIcon />
-          <CssIcon />
+          <ViteIcon />
+          <ReactIcon />
           <JavaScriptIcon />
+          <SassIcon />
         </div>
+      </div>
+      <div className="text-black flex flex-col gap-5 ">
+        <a
+          href="#"
+          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
+        >
+          Watch it live
+        </a>
+        <a
+          href="#"
+          className="button bg-white font-bold w-[20rem] h-[4rem] rounded-md p-2"
+        >
+          Code
+        </a>
       </div>
     </article>
   );

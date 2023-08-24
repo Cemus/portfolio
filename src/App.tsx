@@ -1,17 +1,20 @@
 import Hero from "./components/Hero";
 import Header from "./components/Header";
-import ProjectsSection from "./components/ProjectsSection";
+import Projects from "./components/Sections/Projects";
+import About from "./components/Sections/About";
 import Wave from "./components/Wave";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className=" bg-gradient-to-r from-zinc-800 to-zinc-900">
+    <div className=" bg-gradient-to-r bg-dShade">
       <Header />
       <main>
         <Hero />
-        <ProjectsSection />
+        <Projects />
+        <About />
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }

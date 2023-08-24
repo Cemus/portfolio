@@ -1,14 +1,12 @@
-import placeHolder from "../../assets/bzeignou.jpg";
+import placeHolder from "../../../assets/bzeignou.jpg";
 import {
-  TypeScriptIcon,
-  MongoIcon,
-  TailwindIcon,
-  ViteIcon,
-  NodeIcon,
-  ReactIcon,
-} from "../Icones/Icones";
+  CssIcon,
+  HtmlIcon,
+  JavaScriptIcon,
+  WebpackIcon,
+} from "../../Icones/Icones";
 
-export default function FirstProject() {
+export default function ThirdProject() {
   return (
     <article className="flex flex-row items-center justify-around">
       <div className="text-black flex flex-col gap-5 ">
@@ -45,12 +43,10 @@ export default function FirstProject() {
         </h3>
         <p>In this project, I used the following technologies:</p>
         <div className="flex">
-          <ViteIcon />
-          <NodeIcon />
-          <MongoIcon />
-          <ReactIcon />
-          <TypeScriptIcon />
-          <TailwindIcon />
+          <WebpackIcon />
+          <HtmlIcon />
+          <CssIcon />
+          <JavaScriptIcon />
         </div>
       </div>
     </article>
