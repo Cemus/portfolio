@@ -1,12 +1,20 @@
 import { useState } from "react";
+import { scroller } from "react-scroll";
 
 export default function Header() {
   const [selectedSection, setSelectedSection] = useState<string>("home");
   const handleSectionClick = (section: string) => {
     setSelectedSection(section);
+    console.log(section);
+    scroller.scrollTo(section, {
+      duration: 500,
+      delay: 100,
+      smooth: true,
+      offset: 0,
+    });
   };
   return (
-    <header className=" sticky top-0 backdrop-blur-sm flex items-center justify-between p-5 bg-black bg-opacity-70">
+    <header className=" sticky top-0 backdrop-blur-sm flex items-center justify-between p-5 bg-dDark bg-opacity-70">
       <svg
         className="mx-2"
         xmlns="http://www.w3.org/2000/svg"

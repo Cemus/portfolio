@@ -5,11 +5,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        lShade: "#FAFBFB",
-        lAccent: "#A1BAB1",
-        mBrand: "#E8D623",
-        dAccent: "#BB7659",
-        dShade: "#294341",
+        lShade: "#F7FAFA",
+        lAccent: "#E8D623",
+        mBrand: "#E64242",
+        dAccent: "#9590A7",
+        dShade: "#2E3147",
+        dDark: "#14151e",
       },
       animation: {
         glimmer: "glimmer 3s ease-out infinite",
