@@ -14,7 +14,7 @@ export default function Header() {
     });
   };
   return (
-    <header className=" sticky top-0 backdrop-blur-sm flex items-center justify-between p-5 bg-dDark bg-opacity-70">
+    <header className=" sticky top-0 backdrop-blur-sm flex items-center justify-between p-5 bg-dDark bg-opacity-90">
       <svg
         className="mx-2"
         xmlns="http://www.w3.org/2000/svg"
