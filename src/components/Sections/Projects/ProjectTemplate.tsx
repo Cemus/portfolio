@@ -36,8 +36,11 @@ export default function ProjectTemplate({
   rightSided,
 }: ProjectProps) {
   image = placeHolder;
+  if (window.screenX < 500) {
+    rightSided = true;
+  }
   const links = (
-    <div className=" flex flex-col gap-5 w-full p-5 text-dDark items-center bg-dDark">
+    <div className=" flex flex-col gap-5 w-full h-full p-5 text-dDark items-center bg-dDark">
       <img src={image} alt="placeholder" />
       <a
         href={liveLink}
@@ -54,9 +57,9 @@ export default function ProjectTemplate({
     </div>
   );
   return (
-    <article className="flex flex-row items-center justify-around text-dShade bg-white w-2/3 rounded-sm ">
+    <article className="md:flex md:flex-row md:items-center md:justify-around text-dShade bg-white lg:w-2/3 rounded-sm ">
       {rightSided && links}
-      <div className="max-w-[50%] p-5">
+      <div className="lg:max-w-[50%] p-5">
         <h3 className="text-2xl my-4 font-semibold">{name}</h3>
         {description.map((desc, index) => {
           return (

@@ -5,7 +5,7 @@ export default function Hero() {
     <Element name="home">
       <section className="flex flex-col justify-center text-white max-w-[70%] min-h-screen min-w-full gap-5">
         <div className="flex items-baseline justify-left">
-          <h1 className=" text-6xl px-4 leading-normal">
+          <h1 className="text-5xl text px-4 leading-normal md:text-6xl">
             Kévin est un développeur front-end français
           </h1>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>

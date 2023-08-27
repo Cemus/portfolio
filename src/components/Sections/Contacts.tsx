@@ -8,15 +8,15 @@ export default function Contacts() {
           <h2 className="text-lShade text-5xl mt-10 font-bold p-4">Contacts</h2>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>
         </div>
-        <article className="w-1/2 self-center">
+        <article className="md:w-1/2 self-center">
           <h3 className=" text-center m-4">
             Veuillez cliquer sur la carte la plus forte pour afficher mes
             informations !
           </h3>
-          <div className="flex justify-center m-10">
-            <div className="flex items-center justify-around w-1/6">
+          <div className="flex flex-col  gap-10 items-center">
+            <div className="text-center  gap-1">
               <p>Github :</p>
-              <a href="#">
+              <a className="" href="#">
                 <svg
                   className=""
                   xmlns="http://www.w3.org/2000/svg"
@@ -33,11 +33,13 @@ export default function Contacts() {
                 </svg>
               </a>
             </div>
-            <div className="flex items-center justify-around w-1/6">
+            <div className="text-center gap-1">
               <p>Phone :</p>
+              <p>04 78 98 56 45</p>
             </div>
-            <div className="flex items-center justify-around w-1/6">
+            <div className="text-center gap-1">
               <p>Email :</p>
+              <p>placeholder@plaza.org</p>
             </div>
           </div>
         </article>

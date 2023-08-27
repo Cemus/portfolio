@@ -7,6 +7,12 @@ import Footer from "./components/Footer";
 import Contacts from "./components/Sections/Contacts";
 
 function App() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+      }
+    });
+  });
   return (
     <div className=" bg-gradient-to-r bg-dShade">
       <Header />
