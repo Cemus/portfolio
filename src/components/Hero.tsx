@@ -19,7 +19,7 @@ export default function Hero({
           <div className="flex flex-col sm:flex-row sm:items-baseline  ">
             <p className="text-2xl text-lShade ">
               {userLang === "fr-FR" ? "Je suis " : "I am "}
-              <span className="bg-mBrand px-1 text-lShade">Kévin Lionnet</span>,
+              <em className="bg-mBrand px-1 text-lShade">Kévin Lionnet</em>,
             </p>
             <p className="text-2xl text-lShade px-1">
               {userLang === "fr-FR" ? " développeur web" : " web developper"}
@@ -31,12 +31,13 @@ export default function Hero({
           <button className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade">
             {userLang === "fr-FR" ? "Télécharger mon CV" : "Download my resume"}
           </button>
-          <button
+          <a
+            href="#"
             onClick={() => handleSectionClick("projects")}
             className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade"
           >
             {userLang === "fr-FR" ? "Voir mes projets" : "See my projects"}
-          </button>
+          </a>
         </div>
       </section>
     </Element>
