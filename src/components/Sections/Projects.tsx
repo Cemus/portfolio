@@ -1,12 +1,14 @@
 import { Element } from "react-scroll";
 import ProjectTemplate from "../Sections/Projects/ProjectTemplate";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ userLang }: { userLang: string }) {
   return (
     <Element name="projects">
       <section className="flex  flex-col gap-10 bg-dShade text-white items-center p-10">
         <div className="flex items-baseline justify-center">
-          <h2 className="text-lShade text-5xl mt-10 font-bold p-4">Projects</h2>
+          <h2 className="text-lShade text-5xl mt-10 font-bold p-4">
+            {userLang === "fr-FR" ? "Projets" : "Projects"}
+          </h2>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>
         </div>
         <ProjectTemplate

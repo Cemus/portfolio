@@ -1,11 +1,13 @@
 import { Element } from "react-scroll";
 
-export default function About() {
+export default function About({ userLang }: { userLang: string }) {
   return (
     <Element name="about">
       <section className="flex  flex-col justify-center bg-dDark text-white p-10 min-h-screen ">
         <div className="flex items-baseline justify-center">
-          <h2 className="text-lShade text-5xl mt-10 font-bold p-4">About</h2>
+          <h2 className="text-lShade text-5xl mt-10 font-bold p-4">
+            {userLang === "fr-FR" ? "À propos" : "About"}
+          </h2>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>
         </div>
         <article className="flex flex-col md:flex-row items-center justify-evenly mb-10 ">

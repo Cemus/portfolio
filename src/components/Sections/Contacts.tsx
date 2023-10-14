@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
 
-export default function Contacts() {
+export default function Contacts({ userLang }: { userLang: string }) {
   return (
     <Element name="contacts">
       <section className="flex  flex-col text-white p-10">
@@ -10,8 +10,9 @@ export default function Contacts() {
         </div>
         <article className="md:w-1/2 self-center">
           <h3 className=" text-center m-4">
-            Veuillez cliquer sur la carte la plus forte pour afficher mes
-            informations !
+            {userLang === "fr-FR"
+              ? "Veuillez cliquer sur la carte la plus forte pour afficher mes informations !"
+              : "Click on the most powerful card!"}
           </h3>
           <div className="flex flex-col  gap-10 items-center">
             <div className="text-center  gap-1">
