@@ -1,11 +1,48 @@
 import { Element } from "react-scroll";
+import { useEffect, useRef } from "react";
 
-export default function Contacts({ userLang }: { userLang: string }) {
+export default function Contacts({
+  userLang,
+  handleSectionDynamicChange,
+  selectedSection,
+}: {
+  userLang: string;
+  handleSectionDynamicChange: (sectionName: string) => void;
+  selectedSection: string;
+}) {
+  const contactsRef = useRef<HTMLHeadingElement | null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && selectedSection !== "contacts") {
+            handleSectionDynamicChange("contacts");
+          }
+        });
+      },
+      {
+        threshold: 1, //Permet à IntersectionObserver de se lancer à partir d'un certain seuil (1 = complétement visible)
+      }
+    );
+    if (contactsRef.current) {
+      observer.observe(contactsRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [handleSectionDynamicChange, selectedSection]);
+
   return (
     <Element name="contacts">
-      <section className="flex  flex-col text-white p-10">
+      <section className="flex  flex-col items-center justify-center  text-white p-10 min-h-screen">
         <div className="flex items-baseline justify-center">
-          <h2 className="text-lShade text-5xl mt-10 font-bold p-4">Contacts</h2>
+          <h2
+            ref={contactsRef}
+            className="text-lShade text-5xl mt-10 font-bold p-4 my-10"
+          >
+            Contacts
+          </h2>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>
         </div>
         <article className="md:w-1/2 self-center">
@@ -17,7 +54,7 @@ export default function Contacts({ userLang }: { userLang: string }) {
           <div className="flex flex-col  gap-10 items-center">
             <div className="text-center  gap-1">
               <p>Github :</p>
-              <a className="" href="#">
+              <a href="https://github.com/Cemus" target="_blank" className="">
                 <svg
                   className=""
                   xmlns="http://www.w3.org/2000/svg"

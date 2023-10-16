@@ -35,23 +35,23 @@ export default function ProjectTemplate({
   image,
   rightSided,
 }: ProjectProps) {
-  console.log(rightSided);
   image = placeHolder;
   const userLang = navigator.language;
 
   window.screenX < 500 ? (rightSided = true) : (rightSided = false);
-  console.log(window.screenX);
   const links = (
     <div className=" flex flex-col gap-5 p-5 text-dDark items-center bg-dDark">
       <img src={image} alt="placeholder" />
       <a
         href={liveLink}
+        target="_blank"
         className="button bg-mBrand font-bold w-80 h-10 rounded-md p-2 text-center hover:text-lShade hover:w-96 transition-all"
       >
         {userLang === "fr-FR" ? "Voir en direct" : "Watch it live"}
       </a>
       <a
         href={codeLink}
+        target="_blank"
         className="button bg-mBrand font-bold w-80 h-10 rounded-md p-2 text-center hover:text-lShade hover:w-96 transition-all"
       >
         Code

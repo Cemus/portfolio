@@ -9,8 +9,11 @@ import Contacts from "./components/Sections/Contacts";
 
 function App() {
   const [selectedSection, setSelectedSection] = useState<string>("home");
-  const handleSectionClick = (section: string) => {
-    setSelectedSection(section);
+  const handleSectionDynamicChange = (sectionName: string) => {
+    setSelectedSection(sectionName);
+  };
+  const handleSectionClick = (e: React.MouseEvent, section: string) => {
+    e.preventDefault();
     scroller.scrollTo(section, {
       duration: 500,
       delay: 100,
@@ -27,10 +30,27 @@ function App() {
         handleSectionClick={handleSectionClick}
       />
       <main>
-        <Hero userLang={userLang} handleSectionClick={handleSectionClick} />
-        <Projects userLang={userLang} />
-        <About userLang={userLang} />
-        <Contacts userLang={userLang} />
+        <Hero
+          userLang={userLang}
+          handleSectionClick={handleSectionClick}
+          selectedSection={selectedSection}
+          handleSectionDynamicChange={handleSectionDynamicChange}
+        />
+        <Projects
+          userLang={userLang}
+          selectedSection={selectedSection}
+          handleSectionDynamicChange={handleSectionDynamicChange}
+        />
+        <About
+          userLang={userLang}
+          selectedSection={selectedSection}
+          handleSectionDynamicChange={handleSectionDynamicChange}
+        />
+        <Contacts
+          userLang={userLang}
+          selectedSection={selectedSection}
+          handleSectionDynamicChange={handleSectionDynamicChange}
+        />
       </main>
       <Footer userLang={userLang} />
     </div>

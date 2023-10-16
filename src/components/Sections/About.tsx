@@ -1,16 +1,51 @@
 import { Element } from "react-scroll";
+import { useEffect, useRef } from "react";
 
-export default function About({ userLang }: { userLang: string }) {
+export default function About({
+  userLang,
+  handleSectionDynamicChange,
+  selectedSection,
+}: {
+  userLang: string;
+  handleSectionDynamicChange: (sectionName: string) => void;
+  selectedSection: string;
+}) {
+  const aboutRef = useRef<HTMLHeadingElement | null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && selectedSection !== "about") {
+            handleSectionDynamicChange("about");
+          }
+        });
+      },
+      {
+        threshold: 1, //Permet à IntersectionObserver de se lancer à partir d'un certain seuil (1 = complétement visible)
+      }
+    );
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [handleSectionDynamicChange, selectedSection]);
+
   return (
     <Element name="about">
-      <section className="flex  flex-col justify-center bg-dDark text-white p-10 min-h-screen ">
-        <div className="flex items-baseline justify-center">
-          <h2 className="text-lShade text-5xl mt-10 font-bold p-4">
-            {userLang === "fr-FR" ? "À propos" : "About"}
+      <section className="flex flex-col justify-center bg-dDark text-white p-10 min-h-screen ">
+        <div className="flex items-baseline justify-center ">
+          <h2
+            ref={aboutRef}
+            className="text-lShade text-5xl my-10 font-bold p-4"
+          >
+            {userLang === "fr-FR" ? "Profil" : "About"}
           </h2>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>
         </div>
-        <article className="flex flex-col md:flex-row items-center justify-evenly mb-10 ">
+        <article className="flex flex-col md:flex-row items-center justify-evenly my-10 ">
           <img
             className=" m-10 md:max-w-[20%] aspect-square rounded-full"
             src="https://www.presse-citron.net/app/uploads/2022/12/avatar-2-extrait.jpg"
