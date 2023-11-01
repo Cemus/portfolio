@@ -47,11 +47,11 @@ export default function About({
         </div>
         <article className="flex flex-col md:flex-row items-center justify-evenly my-10 ">
           <img
-            className=" m-10 md:max-w-[20%] aspect-square rounded-full"
-            src="https://www.presse-citron.net/app/uploads/2022/12/avatar-2-extrait.jpg"
+            className=" m-10 md:max-w-[20%] aspect-square rounded-full bg-white"
+            src=""
             alt="avatar"
           />
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 text-justify">
             <h3 className="mb-4 text-4xl">Bonjour !</h3>
             <p className="text-xl leading-relaxed mb-2">
               J'ai découvert le développement en faisant des Game Jam me suis

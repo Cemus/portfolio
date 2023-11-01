@@ -23,7 +23,7 @@ export default function Hero({
         });
       },
       {
-        threshold: 1, //Permet à IntersectionObserver de se lancer à partir d'un certain seuil (1 = complétement visible)
+        threshold: 1, // IntersectionObserver se lance à partir de ce seuil (1 = complétement visible)
       }
     );
     if (heroRef.current) {
@@ -40,7 +40,7 @@ export default function Hero({
         ref={heroRef}
         className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10"
       >
-        <div className="flex flex-col justify-center items-center gap-6">
+        <div className="flex flex-col justify-center items-center gap-10">
           <div className="flex items-baseline justify-left">
             <h1 className="text-5xl text px-4 leading-normal md:text-6xl">
               {userLang === "fr-FR" ? "Bonjour" : "Hi"} 👋
@@ -54,16 +54,22 @@ export default function Hero({
               </em>
               ,
             </p>
-            <p className="text-2xl text-lShade px-1">
-              {userLang === "fr-FR" ? " développeur web" : " web developper"}
-            </p>
-            <span className="relative bg-mBrand w-2 h-2 rounded-full"></span>
+            <div className="flex flex-row items-baseline">
+              <p className="text-2xl text-lShade px-1 ">
+                {userLang === "fr-FR" ? " développeur web" : " web developper"}
+              </p>
+              <div className="relative bg-mBrand w-2 h-2 rounded-full"></div>
+            </div>
           </div>
         </div>
         <div className="flex gap-5 justify-center">
-          <button className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade">
+          <a
+            href="../assets/CV Kévin Lionnet 2023.pdf"
+            download="CV Kévin Lionnet 2023.pdf"
+            className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade"
+          >
             {userLang === "fr-FR" ? "Télécharger mon CV" : "Download my resume"}
-          </button>
+          </a>
           <a
             href="#"
             onClick={(e) => handleSectionClick(e, "projects")}

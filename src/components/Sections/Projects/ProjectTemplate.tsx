@@ -38,9 +38,12 @@ export default function ProjectTemplate({
   image = placeHolder;
   const userLang = navigator.language;
 
-  window.screenX < 500 ? (rightSided = true) : (rightSided = false);
+  if (rightSided === true) {
+    window.screenX < 500 ? (rightSided = true) : (rightSided = false);
+  }
+
   const links = (
-    <div className=" flex flex-col gap-5 p-5 text-dDark items-center bg-dDark">
+    <div className=" flex flex-col gap-5 p-5 text-dDark items-center justify-center bg-dDark ">
       <img src={image} alt="placeholder" />
       <a
         href={liveLink}
@@ -59,13 +62,13 @@ export default function ProjectTemplate({
     </div>
   );
   return (
-    <article className="md:flex md:flex-row md:items-center md:justify-around text-dShade lg:w-2/3 rounded-sm ">
+    <article className="md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex  text-dShade rounded-sm">
       {rightSided && links}
-      <div className="p-5 bg-white ">
+      <div className="flex flex-col  justify-around p-5 bg-white ">
         <h3 className="text-2xl my-4 font-semibold">{name}</h3>
         {description.map((desc, index) => {
           return (
-            <p key={index} className="my-2">
+            <p key={index} className="my-2 text-justify">
               {desc}
             </p>
           );
@@ -79,7 +82,7 @@ export default function ProjectTemplate({
         ) : (
           <p>In this project, I used the following technologies:</p>
         )}
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center ">
           {stack.map((tech: Technology) => {
             const DynamicIcon = lazy(() =>
               import("../../Icones/Icones").then((module) => ({
