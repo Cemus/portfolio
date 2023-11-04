@@ -39,11 +39,11 @@ export default function ProjectTemplate({
   const userLang = navigator.language;
 
   if (rightSided === true) {
-    window.screenX < 500 ? (rightSided = true) : (rightSided = false);
+    window.innerWidth > 500 ? (rightSided = true) : (rightSided = false);
   }
 
   const links = (
-    <div className=" flex flex-col gap-5 p-5 text-dDark items-center justify-center bg-dDark ">
+    <div className=" flex flex-col gap-5 p-5 text-dDark items-center justify-center bg-dDark xl:max-w-[50%]">
       <img src={image} alt="placeholder" />
       <a
         href={liveLink}
@@ -64,7 +64,7 @@ export default function ProjectTemplate({
   return (
     <article className="md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex  text-dShade rounded-sm">
       {rightSided && links}
-      <div className="flex flex-col  justify-around p-5 bg-white ">
+      <div className="flex flex-col  justify-around p-5 bg-white xl:max-w-[50%]  ">
         <h3 className="text-2xl my-4 font-semibold">{name}</h3>
         {description.map((desc, index) => {
           return (

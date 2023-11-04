@@ -23,7 +23,7 @@ function App() {
   };
   const userLang: string = navigator.language;
   return (
-    <div className=" bg-gradient-to-r bg-dShade">
+    <div className=" bg-gradient-to-r bg-dShade overflow-hidden">
       <Header
         userLang={userLang}
         selectedSection={selectedSection}
@@ -36,6 +36,7 @@ function App() {
           selectedSection={selectedSection}
           handleSectionDynamicChange={handleSectionDynamicChange}
         />
+
         <Projects
           userLang={userLang}
           selectedSection={selectedSection}

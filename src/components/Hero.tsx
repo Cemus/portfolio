@@ -1,5 +1,6 @@
 import { Element } from "react-scroll";
 import { useEffect, useRef } from "react";
+import Clouds from "./Clouds";
 
 export default function Hero({
   userLang,
@@ -34,13 +35,25 @@ export default function Hero({
       observer.disconnect();
     };
   }, [handleSectionDynamicChange, selectedSection]);
+  const cloudCreator = () => {
+    return (
+      <>
+        <Clouds basePosition={{ x: -175, y: -175 }} />
+        <Clouds basePosition={{ x: 280, y: -150 }} />
+        <Clouds basePosition={{ x: 350, y: 150 }} />
+        <Clouds basePosition={{ x: -300, y: 200 }} />
+      </>
+    );
+  };
   return (
     <Element name="home">
       <section
         ref={heroRef}
-        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10"
+        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10  relative"
       >
-        <div className="flex flex-col justify-center items-center gap-10">
+        {cloudCreator()}
+
+        <div className="flex flex-col justify-center items-center gap-10 ">
           <div className="flex items-baseline justify-left">
             <h1 className="text-5xl text px-4 leading-normal md:text-6xl">
               {userLang === "fr-FR" ? "Bonjour" : "Hi"} 👋
@@ -49,12 +62,12 @@ export default function Hero({
           <div className="flex flex-col sm:flex-row sm:items-baseline  ">
             <p className="text-2xl text-lShade ">
               {userLang === "fr-FR" ? "Je suis " : "I am "}
-              <em className="bg-mBrand px-1 text-lShade not-italic">
+              <em className="bg-mBrand px-1 text-lShade not-italic rounded-sm">
                 Kévin Lionnet
               </em>
               ,
             </p>
-            <div className="flex flex-row items-baseline">
+            <div className="flex flex-row items-baseline ">
               <p className="text-2xl text-lShade px-1 ">
                 {userLang === "fr-FR" ? " développeur web" : " web developper"}
               </p>
