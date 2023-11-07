@@ -1,6 +1,7 @@
 import { Element } from "react-scroll";
 import { useRef, useEffect } from "react";
 import ProjectTemplate from "../Sections/Projects/ProjectTemplate";
+import "../../index.css";
 
 export default function ProjectsSection({
   userLang,
@@ -37,7 +38,7 @@ export default function ProjectsSection({
   }, [handleSectionDynamicChange, selectedSection]);
   return (
     <Element name="projects">
-      <section className="flex  flex-col gap-10 bg-dShade text-white items-center p-10">
+      <section className="flex  flex-col gap-10 bg-dDark text-white items-center p-10">
         <div className="flex items-baseline justify-center">
           <h2
             ref={projectsRef}
@@ -91,6 +92,7 @@ export default function ProjectsSection({
           rightSided={true}
         />
       </section>
+      <div className="reversed-wave-bg relative bottom-1  w-full h-16 bg-dDark"></div>
     </Element>
   );
 }

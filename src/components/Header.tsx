@@ -8,7 +8,7 @@ export default function Header({
   handleSectionClick: (e: React.MouseEvent, section: string) => void;
 }) {
   return (
-    <header className=" fixed top-0 backdrop-blur-sm flex flex-col gap-2 md:gap-4 w-[100%] md:flex-row items-center justify-between p-3 bg-dDark bg-opacity-90 z-50">
+    <header className=" fixed top-0 backdrop-blur-sm flex flex-col gap-2 md:gap-4 w-[100%] md:flex-row items-center justify-between p-3 bg-dDark bg-opacity-90 z-50 shadow-md">
       <a
         href="/"
         onClick={(e) => handleSectionClick(e, "contacts")}

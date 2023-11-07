@@ -35,7 +35,7 @@ export default function About({
 
   return (
     <Element name="about">
-      <section className="flex flex-col justify-center bg-dDark text-white p-10 min-h-screen ">
+      <section className="flex flex-col justify-center bg-dShade text-white p-10 min-h-screen ">
         <div className="flex items-baseline justify-center ">
           <h2
             ref={aboutRef}

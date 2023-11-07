@@ -43,7 +43,7 @@ export default function ProjectTemplate({
   }
 
   const links = (
-    <div className=" flex flex-col gap-5 p-5 text-dDark items-center justify-center bg-dDark xl:max-w-[50%]">
+    <div className=" flex flex-col gap-5 p-5 text-dDark bg-dShade items-center justify-center  xl:max-w-[50%] rounded-sm">
       <img src={image} alt="placeholder" />
       <a
         href={liveLink}

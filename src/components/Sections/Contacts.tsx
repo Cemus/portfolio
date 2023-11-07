@@ -35,12 +35,10 @@ export default function Contacts({
 
   return (
     <Element name="contacts">
-      <section className="flex  flex-col items-center justify-center  text-white p-10 min-h-screen">
+      <div className="relative top-1 wave-bg w-full h-16 bg-dDark"></div>
+      <section className="flex  flex-col items-center justify-center  text-lShade p-10 min-h-screen bg-dDark">
         <div className="flex items-baseline justify-center">
-          <h2
-            ref={contactsRef}
-            className="text-lShade text-5xl mt-10 font-bold p-4 my-10"
-          >
+          <h2 ref={contactsRef} className=" text-5xl mt-10 font-bold p-4 my-10">
             Contacts
           </h2>
           <span className="bg-mBrand w-4 h-4 rounded-full"></span>

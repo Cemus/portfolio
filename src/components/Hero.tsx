@@ -1,6 +1,5 @@
 import { Element } from "react-scroll";
 import { useEffect, useRef } from "react";
-import Clouds from "./Clouds";
 
 export default function Hero({
   userLang,
@@ -35,24 +34,13 @@ export default function Hero({
       observer.disconnect();
     };
   }, [handleSectionDynamicChange, selectedSection]);
-  const cloudCreator = () => {
-    return (
-      <>
-        <Clouds basePosition={{ x: -175, y: -175 }} />
-        <Clouds basePosition={{ x: 280, y: -150 }} />
-        <Clouds basePosition={{ x: 350, y: 150 }} />
-        <Clouds basePosition={{ x: -300, y: 200 }} />
-      </>
-    );
-  };
+
   return (
     <Element name="home">
       <section
         ref={heroRef}
-        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10  relative"
+        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10  "
       >
-        {cloudCreator()}
-
         <div className="flex flex-col justify-center items-center gap-10 ">
           <div className="flex items-baseline justify-left">
             <h1 className="text-5xl text px-4 leading-normal md:text-6xl">
@@ -79,19 +67,20 @@ export default function Hero({
           <a
             href="../assets/CV Kévin Lionnet 2023.pdf"
             download="CV Kévin Lionnet 2023.pdf"
-            className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade"
+            className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade transition-colors"
           >
             {userLang === "fr-FR" ? "Télécharger mon CV" : "Download my resume"}
           </a>
           <a
             href="#"
             onClick={(e) => handleSectionClick(e, "projects")}
-            className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade"
+            className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade transition-colors"
           >
             {userLang === "fr-FR" ? "Voir mes projets" : "See my projects"}
           </a>
         </div>
       </section>
+      <div className="wave-bg  w-full h-16 bg-dDark"></div>
     </Element>
   );
 }

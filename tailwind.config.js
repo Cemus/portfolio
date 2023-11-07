@@ -14,14 +14,26 @@ export default {
       },
       animation: {
         glimmer: "glimmer 3s ease-out infinite",
+        float: "float 5s ease-out infinite",
       },
       keyframes: {
         glimmer: {
           "0%,100%": { opacity: ".1" },
           "50%": { opacity: "1" },
         },
+        float: {
+          "0%": {
+            transform: "translatey(0px)",
+          },
+          "50%": {
+            transform: "translatey(-5px)",
+          },
+          "100%": {
+            transform: "translatey(0px)",
+          },
+        },
       },
     },
+    plugins: [],
   },
-  plugins: [],
 };
