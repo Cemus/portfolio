@@ -82,12 +82,14 @@ export default function ProjectTemplate({
           <a
             href={liveLink}
             target="_blank"
+            rel="noreferrer"
             className="button shadow-dShade shadow-md bg-mBrand font-bold w-80 h-10 rounded-md p-2 text-center hover:text-lShade sm:hover:w-96 transition-all animate-slideFromRight"
           >
             {userLang === "fr-FR" ? "Voir en direct" : "Watch it live"}
           </a>
           <a
             href={codeLink}
+            rel="noreferrer"
             target="_blank"
             className="button shadow-dShade  shadow-md  bg-mBrand font-bold w-80 h-10 rounded-md p-2 text-center hover:text-lShade sm:hover:w-96 transition-all animate-slideFromLeft"
           >
