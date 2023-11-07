@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
 import { useEffect, useRef } from "react";
-
+import pdf from "../assets/CV Kévin Lionnet 2023.pdf";
 export default function Hero({
   userLang,
   handleSectionClick,
@@ -65,8 +65,9 @@ export default function Hero({
         </div>
         <div className="flex gap-5 justify-center">
           <a
-            href="../assets/CV Kévin Lionnet 2023.pdf"
-            download="CV Kévin Lionnet 2023.pdf"
+            href={pdf}
+            target="_blank"
+            rel="noreferrer"
             className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade transition-colors"
           >
             {userLang === "fr-FR" ? "Télécharger mon CV" : "Download my resume"}

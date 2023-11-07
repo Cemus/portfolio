@@ -1,6 +1,9 @@
 import { Element } from "react-scroll";
 import { useRef, useEffect } from "react";
 import ProjectTemplate from "../Sections/Projects/ProjectTemplate";
+import cvCreatorImage from "../../assets/projects/cv-creator.png";
+import imageBoardImage from "../../assets/projects/image-board.png";
+import toDoImage from "../../assets/projects/todo.png";
 import "../../index.css";
 
 export default function ProjectsSection({
@@ -39,14 +42,16 @@ export default function ProjectsSection({
   return (
     <Element name="projects">
       <section className="flex  flex-col gap-10 bg-dDark text-white items-center p-10">
-        <div className="flex items-baseline justify-center">
+        <div className="flex items-baseline justify-center w-full">
           <h2
             ref={projectsRef}
             className="text-lShade text-5xl mt-10 font-bold p-4"
           >
             {userLang === "fr-FR" ? "Projets" : "Projects"}
           </h2>
-          <span className="bg-mBrand w-4 h-4 rounded-full"></span>
+          {selectedSection === "projects" && (
+            <span className="bg-mBrand w-4 h-4 rounded-full animate-pop"></span>
+          )}
         </div>
         <ProjectTemplate
           name="Image-board"
@@ -64,7 +69,7 @@ export default function ProjectsSection({
             "MongoIcon",
             "ViteIcon",
           ]}
-          image=""
+          image={imageBoardImage}
           rightSided={true}
         />
         <ProjectTemplate
@@ -76,7 +81,7 @@ export default function ProjectsSection({
             "Une fois le CV finalisé, les utilisateurs ont la possibilité de le télécharger au format PDF. Ce projet a renforcé ma compétence en développement React et ma capacité à créer des solutions pratiques pour les utilisateurs, tout en démontrant mon engagement envers une expérience utilisateur fluide et fonctionnelle.",
           ]}
           stack={["JavaScriptIcon", "SassIcon", "ReactIcon", "ViteIcon"]}
-          image=""
+          image={cvCreatorImage}
           rightSided={false}
         />
         <ProjectTemplate
@@ -88,7 +93,7 @@ export default function ProjectsSection({
             "L'application permet de créer des projets et d'ajouter des tâches à l'intérieur de chacun d'entre eux. Une fois terminés, on peut facilement supprimer les projets ou les tâches.",
           ]}
           stack={["HtmlIcon", "CssIcon", "JavaScriptIcon"]}
-          image=""
+          image={toDoImage}
           rightSided={true}
         />
       </section>

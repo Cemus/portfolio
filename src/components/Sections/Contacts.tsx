@@ -41,7 +41,9 @@ export default function Contacts({
           <h2 ref={contactsRef} className=" text-5xl mt-10 font-bold p-4 my-10">
             Contacts
           </h2>
-          <span className="bg-mBrand w-4 h-4 rounded-full"></span>
+          {selectedSection === "contacts" && (
+            <span className="bg-mBrand w-4 h-4 rounded-full animate-pop"></span>
+          )}
         </div>
         <article className="md:w-1/2 self-center">
           <h3 className=" text-center m-4">

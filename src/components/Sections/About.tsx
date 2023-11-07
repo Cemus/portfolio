@@ -43,7 +43,9 @@ export default function About({
           >
             {userLang === "fr-FR" ? "Profil" : "About"}
           </h2>
-          <span className="bg-mBrand w-4 h-4 rounded-full"></span>
+          {selectedSection === "about" && (
+            <span className="bg-mBrand w-4 h-4 rounded-full animate-pop"></span>
+          )}
         </div>
         <article className="flex flex-col md:flex-row items-center justify-evenly my-10 ">
           <img
