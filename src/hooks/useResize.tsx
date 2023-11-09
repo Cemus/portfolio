@@ -7,7 +7,7 @@ const useResize = () => {
     const resize = () => {
       setTimeout(() => {
         setSize([window.innerWidth]);
-      }, 400);
+      }, 1500);
     };
     window.addEventListener("resize", resize);
 

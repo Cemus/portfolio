@@ -69,7 +69,7 @@ export default function ProjectTemplate({
       <img
         onMouseEnter={handleProjectButtonDisplay}
         onMouseLeave={handleProjectButtonDisplay}
-        className="group-hover:opacity-50 transition-opacity "
+        className="md:group-hover:opacity-50 transition-opacity "
         src={image}
         alt={`${name} image`}
       />
@@ -77,7 +77,7 @@ export default function ProjectTemplate({
         <div
           onMouseEnter={handleProjectButtonDisplay}
           onMouseLeave={handleProjectButtonDisplay}
-          className="hover:group/image:opacity-25 flex flex-col gap-7  items-center justify-center md:absolute md:w-full md:h-full  md:top-0 md:left-0"
+          className=" flex flex-col gap-7  items-center justify-center md:absolute md:w-full md:h-full  md:top-0 md:left-0"
         >
           <a
             href={liveLink}

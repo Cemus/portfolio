@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import ProjectTemplate from "../Sections/Projects/ProjectTemplate";
 import cvCreatorImage from "../../assets/projects/cv-creator.png";
 import imageBoardImage from "../../assets/projects/image-board.png";
-import toDoImage from "../../assets/projects/todo.png";
+import shoppingCart from "../../assets/projects/shopping-cart.png";
 import "../../index.css";
 
 export default function ProjectsSection({
@@ -85,15 +85,14 @@ export default function ProjectsSection({
           rightSided={false}
         />
         <ProjectTemplate
-          name="Todo-list"
-          liveLink="https://cemus.github.io/to-do-list/ "
-          codeLink="https://github.com/Cemus/to-do-list"
+          name="Beach Trolley"
+          liveLink="https://cemus.github.io/shopping-cart/  "
+          codeLink="https://github.com/Cemus/shopping-cart"
           description={[
-            "Réalisée sans l'utilisation de frameworks, cette application repose entièrement sur JavaScript, avec une touche d'HTML et de CSS pour une expérience utilisateur fluide.",
-            "L'application permet de créer des projets et d'ajouter des tâches à l'intérieur de chacun d'entre eux. Une fois terminés, on peut facilement supprimer les projets ou les tâches.",
+            "Maquette au design réactif d'un commerce d'article de plage.",
           ]}
-          stack={["HtmlIcon", "CssIcon", "JavaScriptIcon"]}
-          image={toDoImage}
+          stack={["ReactIcon", "HtmlIcon", "CssIcon", "JavaScriptIcon"]}
+          image={shoppingCart}
           rightSided={true}
         />
       </section>

@@ -1,5 +1,6 @@
 import { Element } from "react-scroll";
 import { useEffect, useRef } from "react";
+import profile from "../../assets/profile.jpg";
 
 export default function About({
   userLang,
@@ -47,25 +48,30 @@ export default function About({
             <span className="bg-mBrand w-4 h-4 rounded-full animate-pop"></span>
           )}
         </div>
-        <article className="flex flex-col md:flex-row items-center justify-evenly my-10 ">
-          <img
-            className=" m-10 md:max-w-[20%] aspect-square rounded-full bg-white"
-            src=""
-            alt="avatar"
-          />
+        <article className="flex flex-col md:flex-row items-center justify-evenly my-10 gap-8 ">
+          <div className="relative w-80 h-80 overflow-hidden rounded-full">
+            <img
+              className="relative bottom-16 w-full h-auto"
+              src={profile}
+              alt="avatar"
+            />
+          </div>
           <div className="md:w-1/2 text-justify">
             <h3 className="mb-4 text-4xl">Bonjour !</h3>
             <p className="text-xl leading-relaxed mb-2">
-              J'ai découvert le développement en faisant des Game Jam me suis
-              laissé prendre dans l'engrenage ! Je me suis mis à apprendre
-              Python pour ensuite me concentrer sur le développement web par le
-              biais, notamment, du site <cite>The Odin Project</cite>.
+              J'ai découvert le développement en faisant des Game Jam et je me
+              suis laissé prendre dans l'engrenage !
+            </p>
+            <p className="text-xl leading-relaxed mb-2">
+              Je me suis mis à apprendre Python pour ensuite me concentrer sur
+              le développement web par le biais, notamment, du site{" "}
+              <cite>The Odin Project</cite>.
             </p>
             <p className="text-xl leading-relaxed">
-              Je suis toujours ouvert à de nouvelles opportunités pour affiner
-              mes compétences et relever de nouveaux défis. Je me pousse à
-              évoluer constamment en gardant un oeil sur ce qu'il se fait dans
-              le monde du développement pour adapter mes pratiques.
+              Je suis ouvert à de nouvelles opportunités pour affiner mes
+              compétences et relever de nouveaux défis. Je me pousse à évoluer
+              constamment en gardant un oeil sur ce qu'il se fait dans le monde
+              du développement pour adapter mes pratiques.
             </p>
           </div>
         </article>

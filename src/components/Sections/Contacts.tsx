@@ -52,11 +52,10 @@ export default function Contacts({
               : "Click on the most powerful card!"}
           </h3>
           <div className="flex flex-col  gap-10 items-center">
-            <div className="text-center  gap-1">
+            <div className="text-center ">
               <p>Github :</p>
               <a href="https://github.com/Cemus" target="_blank" className="">
                 <svg
-                  className=""
                   xmlns="http://www.w3.org/2000/svg"
                   x="0px"
                   y="0px"
@@ -71,13 +70,13 @@ export default function Contacts({
                 </svg>
               </a>
             </div>
-            <div className="text-center gap-1">
-              <p>Phone :</p>
-              <p>04 78 98 56 45</p>
+            <div className="text-center">
+              <p>Téléphone :</p>
+              <p>07 68 89 89 23</p>
             </div>
-            <div className="text-center gap-1">
+            <div className="text-center">
               <p>Email :</p>
-              <p>placeholder@plaza.org</p>
+              <p>kevin-lionnet@outlook.fr</p>
             </div>
           </div>
         </article>
