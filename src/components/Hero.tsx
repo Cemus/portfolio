@@ -81,7 +81,7 @@ export default function Hero({
           </a>
         </div>
       </section>
-      <div className="wave-bg  w-full h-16 bg-dDark"></div>
+      <div className=" relative wave-bg  w-full h-16 top-1 bg-dDark"></div>
     </Element>
   );
 }
