@@ -39,7 +39,10 @@ export default function Contacts({
       <div className="relative top-1 wave-bg w-full h-16 bg-dDark"></div>
       <section className="flex  flex-col items-center justify-center  text-lShade p-10 min-h-screen bg-dDark">
         <div className="flex items-baseline justify-center">
-          <h2 ref={contactsRef} className=" text-5xl mt-10 font-bold p-4 my-10">
+          <h2
+            ref={contactsRef}
+            className=" text-5xl mt-10 font-bold p-4 my-10 "
+          >
             Contacts
           </h2>
           {selectedSection === "contacts" && (
@@ -50,22 +53,23 @@ export default function Contacts({
           <div className="flex flex-col  gap-10 items-center">
             <div className="text-center">
               <h3 className="text-2xl my-4 font-semibold">
-                {userLang === "fr-FR" ? "Téléphone" : "Phone"}
+                {userLang === "fr-FR" ? "Téléphone :" : "Phone :"}
               </h3>
-              <p>07 68 89 89 23</p>
+
+              <p className="text-xl">07 68 89 89 23</p>
             </div>
             <div className="text-center">
               <h3 className="text-2xl my-4 font-semibold">Email :</h3>
               <a
                 href="mailto:kevin-lionnet@outlook.fr"
-                className="underline underline-offset-2 hover:text-mBrand"
+                className="text-xl underline underline-offset-2 hover:text-mBrand "
               >
                 kevin-lionnet@outlook.fr
               </a>
             </div>
             <div className="text-center ">
               <h3 className="text-2xl my-4 font-semibold">
-                {userLang === "fr-FR" ? "Réseaux" : "Socials"}
+                {userLang === "fr-FR" ? "Réseaux :" : "Socials :"}
               </h3>
               <div className="flex flex-row items-center justify-center">
                 <a href="https://github.com/Cemus" target="_blank">

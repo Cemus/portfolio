@@ -57,21 +57,25 @@ export default function About({
             />
           </div>
           <div className="md:w-1/2 text-justify">
-            <h3 className="mb-4 text-4xl">Bonjour !</h3>
+            <h3 className="mb-4 text-4xl">
+              {" "}
+              {userLang === "fr-FR" ? "Enchanté !" : "Nice to meet you!"}
+            </h3>
             <p className="text-xl leading-relaxed mb-2">
-              J'ai découvert le développement en faisant des Game Jam et je me
-              suis laissé prendre dans l'engrenage !
+              {userLang === "fr-FR"
+                ? "J'ai découvert le développement en faisant des Game Jam et je me suis laissé prendre dans l'engrenage !"
+                : "I discovered development while participating in Game Jams and got hooked!"}
             </p>
             <p className="text-xl leading-relaxed mb-2">
-              Je me suis mis à apprendre Python pour ensuite me concentrer sur
-              le développement web par le biais, notamment, du site{" "}
+              {userLang === "fr-FR"
+                ? "Je me suis mis à apprendre Python pour ensuite me concentrer sur le développement web par le biais, notamment, du site "
+                : "I started learning Python and then shifted my focus to web development, particularly through "}
               <cite>The Odin Project</cite>.
             </p>
             <p className="text-xl leading-relaxed">
-              Je suis ouvert à de nouvelles opportunités pour affiner mes
-              compétences et relever de nouveaux défis. Je me pousse à évoluer
-              constamment en gardant un oeil sur ce qu'il se fait dans le monde
-              du développement pour adapter mes pratiques.
+              {userLang === "fr-FR"
+                ? "Je suis ouvert à de nouvelles opportunités pour affiner mes compétences et relever de nouveaux défis. Je me pousse à évoluer constamment en gardant un œil sur ce qui se fait dans le monde du développement pour adapter mes pratiques."
+                : "I am open to new opportunities to refine my skills and take on new challenges. I constantly strive to evolve by keeping an eye on developments in the world of programming to adapt my practices."}
             </p>
           </div>
         </article>

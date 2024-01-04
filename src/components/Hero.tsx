@@ -41,14 +41,14 @@ export default function Hero({
         ref={heroRef}
         className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10  "
       >
-        <div className="flex flex-col justify-center items-center gap-10 ">
+        <div className="flex flex-col justify-center items-center gap-5 ">
           <div className="flex items-baseline justify-left">
-            <h1 className="text-5xl text px-4 leading-normal md:text-6xl">
+            <h1 className="text-6xl text-lShade px-4 leading-normal">
               {userLang === "fr-FR" ? "Bonjour" : "Hi"} 👋
             </h1>
           </div>
-          <div className="flex flex-col sm:flex-row sm:items-baseline  ">
-            <p className="text-2xl text-lShade ">
+          <div className="flex flex-col sm:flex-row sm:items-baseline text-3xl gap-1 justify-center">
+            <p className=" text-lShade ">
               {userLang === "fr-FR" ? "Je suis " : "I am "}
               <em className="bg-mBrand px-1 text-lShade not-italic rounded-sm">
                 Kévin Lionnet
@@ -56,7 +56,7 @@ export default function Hero({
               ,
             </p>
             <div className="flex flex-row items-baseline ">
-              <p className="text-2xl text-lShade px-1 ">
+              <p className=" text-lShade px-1 ">
                 {userLang === "fr-FR" ? " développeur web" : " web developper"}
               </p>
               <div className="relative bg-mBrand w-2 h-2 rounded-full"></div>
