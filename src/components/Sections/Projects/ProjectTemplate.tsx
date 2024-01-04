@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import useResize from "../../../hooks/useResize";
 
 type Technology =
@@ -31,6 +31,7 @@ interface ProjectImageProps {
   userLang: string;
   liveLink: string;
   codeLink: string;
+  screenWidth: number;
 }
 
 interface ProjectLinksProps {
@@ -45,16 +46,31 @@ const ProjectImage = ({
   userLang,
   liveLink,
   codeLink,
+  screenWidth,
 }: ProjectImageProps) => {
-  const [hoveringProjectImage, setHoveringProjectImage] = useState(false);
-
+  const mediumWidth = 768;
+  const [hoveringProjectImage, setHoveringProjectImage] = useState(
+    screenWidth < mediumWidth
+  );
   const handleMouseEnter = () => {
     setHoveringProjectImage(true);
   };
 
   const handleMouseLeave = () => {
-    setHoveringProjectImage(false);
+    if (screenWidth >= mediumWidth) {
+      setHoveringProjectImage(false);
+    }
   };
+
+  useEffect(() => {
+    if (screenWidth >= mediumWidth) {
+      console.log("testo");
+      setHoveringProjectImage(false);
+    } else {
+      console.log("test");
+      setHoveringProjectImage(true);
+    }
+  }, [screenWidth]);
 
   return (
     <>
@@ -65,7 +81,7 @@ const ProjectImage = ({
           src={image}
           alt={`${name} image`}
         />
-        {hoveringProjectImage && (
+        {(hoveringProjectImage || screenWidth < mediumWidth) && (
           <ProjectLinks
             liveLink={liveLink}
             codeLink={codeLink}
@@ -79,7 +95,7 @@ const ProjectImage = ({
 
 const ProjectLinks = ({ liveLink, codeLink, userLang }: ProjectLinksProps) => {
   return (
-    <div className="flex flex-col gap-7 items-center justify-center md:absolute md:w-full md:h-full md:top-0 md:left-0">
+    <div className="flex flex-col gap-7 m-2 items-center justify-center md:m-0 md:absolute md:w-full md:h-full md:top-0 md:left-0">
       <a
         href={liveLink}
         target="_blank"
@@ -119,7 +135,6 @@ export default function ProjectTemplate({
     screenWidth >= 1440 ? (rightSided = false) : (rightSided = true);
   }
 
-  console.log("render");
   return (
     <article className="md:max-w-xl lg:max-w-3xl xl:max-w-5xl xl:flex  text-lShade rounded-sm">
       {rightSided ? (
@@ -131,6 +146,7 @@ export default function ProjectTemplate({
               liveLink={liveLink}
               codeLink={codeLink}
               userLang={userLang}
+              screenWidth={screenWidth}
             />
           </div>
           <div className="flex flex-col  justify-around p-5  xl:max-w-[50%]  ">
@@ -217,6 +233,7 @@ export default function ProjectTemplate({
               liveLink={liveLink}
               codeLink={codeLink}
               userLang={userLang}
+              screenWidth={screenWidth}
             />
           </div>
         </>
