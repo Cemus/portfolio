@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
 import { useEffect, useRef } from "react";
-import pdf from "../assets/CV Kévin Lionnet 2023.pdf";
+import pdf from "../assets/CV Kévin Lionnet 2024.pdf";
 export default function Hero({
   userLang,
   handleSectionClick,
