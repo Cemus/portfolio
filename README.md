@@ -1,4 +1,3 @@
+# Portfolio
 
-My personal portfolio profile :arrow_right: https://cemus.github.io/portfolio/
-
-:)
+My personal portfolio website :arrow_right: https://cemus.github.io/portfolio/ 👋
