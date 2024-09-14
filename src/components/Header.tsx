@@ -8,17 +8,17 @@ export default function Header({
   handleSectionClick: (e: React.MouseEvent, section: string) => void;
 }) {
   return (
-    <header className=" fixed  top-0 backdrop-blur-sm flex flex-col gap-2 md:gap-4 w-[100%] md:flex-row items-center justify-between p-3 md:p-6 bg-dDark bg-opacity-90 z-50 shadow-md">
+    <header className=" fixed  top-0 backdrop-blur-sm flex flex-col gap-2 md:gap-4 w-[100%] md:flex-row items-center justify-between p-2 md:p-6 bg-dDark bg-opacity-90 z-50 shadow-md">
       <a
         href="/"
         onClick={(e) => handleSectionClick(e, "contacts")}
         className="flex flex-row items-baseline gap-1"
       >
-        <div className="text-white font-medium text-5xl mb-2 md:mb-0">KL</div>
+        <div className="text-white font-medium lg:text-5xl text-3xl  ">KL</div>
         <div className="bg-mBrand w-3 h-3 rounded-full"></div>
       </a>
 
-      <nav className="text-white flex justify-center md:justify-end font-bold gap-10 mx-2 text-xl md:text-2xl">
+      <nav className="text-white flex justify-center md:justify-end font-bold gap-10 mx-2 text-md md:text-xl">
         <a
           href="/"
           className={`cursor-pointer ${

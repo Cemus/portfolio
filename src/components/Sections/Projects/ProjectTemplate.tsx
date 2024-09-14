@@ -153,7 +153,7 @@ export default function ProjectTemplate({
             <h3 className="text-3xl my-4 font-semibold">{name}</h3>
             {description.map((desc, index) => {
               return (
-                <p key={index} className="my-2 text-justify text-xl">
+                <p key={index} className="my-2 leading-relaxed text-xl">
                   {desc}
                 </p>
               );

@@ -36,7 +36,7 @@ export default function About({
 
   return (
     <Element name="about">
-      <section className="flex flex-col justify-center bg-dShade text-white p-10 min-h-screen ">
+      <section className="flex flex-col justify-center bg-dShade text-white p-5 min-h-screen ">
         <div className="flex items-baseline justify-center ">
           <h2
             ref={aboutRef}
@@ -56,23 +56,23 @@ export default function About({
               alt="avatar"
             />
           </div>
-          <div className="md:w-1/2 text-justify">
-            <h3 className="mb-4 text-4xl">
+          <div className="md:w-1/2 ">
+            <h3 className="mb-4 text-4xl text-center md:text-left">
               {" "}
               {userLang === "fr-FR" ? "Enchanté !" : "Nice to meet you!"}
             </h3>
-            <p className="text-xl leading-relaxed mb-2">
+            <p className="md:text-xl text-lg leading-relaxed mb-2">
               {userLang === "fr-FR"
                 ? "J'ai découvert le développement en faisant des Game Jam et je me suis laissé prendre dans l'engrenage !"
                 : "I discovered development while participating in Game Jams and got hooked!"}
             </p>
-            <p className="text-xl leading-relaxed mb-2">
+            <p className="md:text-xl text-lg leading-relaxed mb-2">
               {userLang === "fr-FR"
                 ? "Je me suis mis à apprendre Python pour ensuite me concentrer sur le développement web par le biais, notamment, du site "
                 : "I started learning Python and then shifted my focus to web development, particularly through "}
               <cite>The Odin Project</cite>.
             </p>
-            <p className="text-xl leading-relaxed">
+            <p className="md:text-xl text-lg leading-relaxed">
               {userLang === "fr-FR"
                 ? "Je suis ouvert à de nouvelles opportunités pour affiner mes compétences et relever de nouveaux défis. Je me pousse à évoluer constamment en gardant un œil sur ce qui se fait dans le monde du développement pour adapter mes pratiques."
                 : "I am open to new opportunities to refine my skills and take on new challenges. I constantly strive to evolve by keeping an eye on developments in the world of programming to adapt my practices."}
