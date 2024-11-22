@@ -21,7 +21,7 @@ function App() {
       offset: 0,
     });
   };
-  const userLang: string = window.navigator.language;
+  const userLang: string = "fr-FR";
   return (
     <div className=" bg-gradient-to-r bg-dShade overflow-hidden">
       <Header
