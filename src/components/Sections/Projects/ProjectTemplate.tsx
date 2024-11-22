@@ -64,10 +64,8 @@ const ProjectImage = ({
 
   useEffect(() => {
     if (screenWidth >= mediumWidth) {
-      console.log("testo");
       setHoveringProjectImage(false);
     } else {
-      console.log("test");
       setHoveringProjectImage(true);
     }
   }, [screenWidth]);
