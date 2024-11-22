@@ -12,14 +12,18 @@ function App() {
   const handleSectionDynamicChange = (sectionName: string) => {
     setSelectedSection(sectionName);
   };
+
   const handleSectionClick = (e: React.MouseEvent, section: string) => {
     e.preventDefault();
     scroller.scrollTo(section, {
       duration: 500,
-      delay: 100,
+      delay: 50,
       smooth: true,
       offset: 0,
     });
+    setTimeout(() => {
+      handleSectionDynamicChange(section);
+    }, 500);
   };
   const userLang: string = "fr-FR";
   return (

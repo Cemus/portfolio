@@ -12,11 +12,13 @@ export default function Contacts({
   selectedSection: string;
 }) {
   const contactsRef = useRef<HTMLHeadingElement | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && selectedSection !== "contacts") {
+            console.log("contacts", entry);
             handleSectionDynamicChange("contacts");
           }
         });
@@ -41,7 +43,7 @@ export default function Contacts({
         <div className="flex items-baseline justify-center">
           <h2
             ref={contactsRef}
-            className=" text-5xl mt-10 font-bold p-4 my-10 "
+            className="text-lShade text-5xl my-10 font-bold p-4"
           >
             Contacts
           </h2>

@@ -22,6 +22,8 @@ export default function ProjectsSection({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && selectedSection !== "projects") {
+            console.log("project", entry);
+
             handleSectionDynamicChange("projects");
           }
         });

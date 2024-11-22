@@ -13,6 +13,7 @@ export default function Hero({
   selectedSection: string;
 }) {
   const heroRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -23,7 +24,7 @@ export default function Hero({
         });
       },
       {
-        threshold: 1, // IntersectionObserver se lance à partir de ce seuil (1 = complétement visible)
+        threshold: 0.9, // IntersectionObserver se lance à partir de ce seuil (1 = complétement visible)
       }
     );
     if (heroRef.current) {
@@ -33,13 +34,13 @@ export default function Hero({
     return () => {
       observer.disconnect();
     };
-  }, [handleSectionDynamicChange, selectedSection]);
+  }, []);
 
   return (
     <Element name="home">
       <section
         ref={heroRef}
-        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10  "
+        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10 "
       >
         <div className="flex flex-col justify-center items-center gap-5 ">
           <div className="flex items-baseline justify-left">

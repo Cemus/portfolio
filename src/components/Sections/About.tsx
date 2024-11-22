@@ -12,11 +12,14 @@ export default function About({
   selectedSection: string;
 }) {
   const aboutRef = useRef<HTMLHeadingElement | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && selectedSection !== "about") {
+            console.log("about", entry);
+
             handleSectionDynamicChange("about");
           }
         });
@@ -32,11 +35,11 @@ export default function About({
     return () => {
       observer.disconnect();
     };
-  }, [handleSectionDynamicChange, selectedSection]);
+  }, []);
 
   return (
     <Element name="about">
-      <section className="flex flex-col justify-center bg-dShade text-white p-5 min-h-screen ">
+      <section className="flex flex-col justify-center bg-dShade text-white p-10 min-h-screen ">
         <div className="flex items-baseline justify-center ">
           <h2
             ref={aboutRef}
