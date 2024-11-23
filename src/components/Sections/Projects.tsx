@@ -1,59 +1,50 @@
 import { Element } from "react-scroll";
-import { useRef, useEffect } from "react";
 import ProjectTemplate from "../sections/Projects/ProjectTemplate";
 import cvCreatorImage from "../../assets/projects/cv-creator.png";
 import imageBoardImage from "../../assets/projects/image-board.png";
 import shoppingCart from "../../assets/projects/shopping-cart.png";
 import "../../index.css";
+import Indicator from "../others/Indicator";
+import { memo, useEffect, useRef, useState } from "react";
 
-export default function ProjectsSection({
-  userLang,
-  handleSectionDynamicChange,
-  selectedSection,
-}: {
-  userLang: string;
-  handleSectionDynamicChange: (sectionName: string) => void;
-  selectedSection: string;
-}) {
-  const projectsRef = useRef<HTMLHeadingElement | null>(null);
+const ProjectsSection = memo(function ({ userLang }: { userLang: string }) {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && selectedSection !== "projects") {
-            console.log("project", entry);
-
-            handleSectionDynamicChange("projects");
-          }
+          setIsVisible(entry.isIntersecting);
         });
       },
-      {
-        threshold: 1, //Permet à IntersectionObserver de se lancer à partir d'un certain seuil (1 = complétement visible)
-      }
+      { threshold: 1 }
     );
 
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
     return () => {
-      observer.disconnect();
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
-  }, [handleSectionDynamicChange, selectedSection]);
+  }, []);
   return (
     <Element name="projects">
-      <section className="flex  flex-col gap-10 bg-dDark text-white items-center p-10">
+      <section
+        id="projects"
+        className="flex  flex-col gap-10 bg-dDark text-white items-center p-10"
+      >
         <div className="flex items-baseline justify-center w-full">
           <h2
-            ref={projectsRef}
+            ref={sectionRef}
             className="text-lShade text-5xl mt-10 font-bold p-4"
           >
             {userLang === "fr-FR" ? "Projets" : "Projects"}
           </h2>
-          {selectedSection === "projects" && (
-            <span className="bg-mBrand w-4 h-4 rounded-full animate-pop"></span>
-          )}
+          <Indicator isVisible={isVisible} />
         </div>
         <ProjectTemplate
           name="Image-board"
@@ -101,4 +92,6 @@ export default function ProjectsSection({
       <div className="reversed-wave-bg relative bottom-1  w-full h-16 bg-dDark"></div>
     </Element>
   );
-}
+});
+
+export default ProjectsSection;

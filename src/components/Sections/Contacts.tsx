@@ -1,55 +1,44 @@
 import { Element } from "react-scroll";
-import { useEffect, useRef } from "react";
 import { GitHubIcon, LinkedInIcon } from "../icones/Icones";
+import Indicator from "../others/Indicator";
+import { useEffect, useRef, useState } from "react";
 
-export default function Contacts({
-  userLang,
-  handleSectionDynamicChange,
-  selectedSection,
-}: {
-  userLang: string;
-  handleSectionDynamicChange: (sectionName: string) => void;
-  selectedSection: string;
-}) {
-  const contactsRef = useRef<HTMLHeadingElement | null>(null);
+export default function Contacts({ userLang }: { userLang: string }) {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && selectedSection !== "contacts") {
-            console.log("contacts", entry);
-            handleSectionDynamicChange("contacts");
-          }
+          setIsVisible(entry.isIntersecting);
         });
       },
-      {
-        threshold: 1, //Permet à IntersectionObserver de se lancer à partir d'un certain seuil (1 = complétement visible)
-      }
+      { threshold: 1 }
     );
-    if (contactsRef.current) {
-      observer.observe(contactsRef.current);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
     return () => {
-      observer.disconnect();
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
-  }, [handleSectionDynamicChange, selectedSection]);
-
+  }, []);
   return (
     <Element name="contacts">
       <div className="relative top-1 wave-bg w-full h-16 bg-dDark"></div>
       <section className="flex  flex-col items-center justify-center  text-lShade p-10 min-h-screen bg-dDark">
         <div className="flex items-baseline justify-center">
           <h2
-            ref={contactsRef}
+            ref={sectionRef}
             className="text-lShade text-5xl my-10 font-bold p-4"
           >
             Contacts
           </h2>
-          {selectedSection === "contacts" && (
-            <span className="bg-mBrand w-4 h-4 rounded-full animate-pop"></span>
-          )}
+          <Indicator isVisible={isVisible} />
         </div>
         <article className="md:w-1/2 self-center">
           <div className="flex flex-col  gap-10 items-center">

@@ -1,47 +1,10 @@
-import { Element } from "react-scroll";
-import { useEffect, useRef } from "react";
-import pdf from "../assets/CV Kévin Lionnet 2024.pdf";
-export default function Hero({
-  userLang,
-  handleSectionClick,
-  handleSectionDynamicChange,
-  selectedSection,
-}: {
-  userLang: string;
-  handleSectionClick: (e: React.MouseEvent, section: string) => void;
-  handleSectionDynamicChange: (sectionName: string) => void;
-  selectedSection: string;
-}) {
-  const heroRef = useRef<HTMLElement | null>(null);
+import { Element, Link } from "react-scroll";
+import pdf from "../../assets/CV Kévin Lionnet 2024.pdf";
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && selectedSection !== "home") {
-            handleSectionDynamicChange("home");
-          }
-        });
-      },
-      {
-        threshold: 0.9, // IntersectionObserver se lance à partir de ce seuil (1 = complétement visible)
-      }
-    );
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [handleSectionDynamicChange, selectedSection]);
-
+export default function Hero({ userLang }: { userLang: string }) {
   return (
     <Element name="home">
-      <section
-        ref={heroRef}
-        className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10 "
-      >
+      <section className="flex flex-col justify-center items-center text-lShade max-w-[70%] min-h-screen min-w-full gap-10 ">
         <div className="flex flex-col justify-center items-center gap-5 ">
           <div className="flex items-baseline justify-left">
             <h1 className="text-6xl text-lShade px-4 leading-normal">
@@ -73,13 +36,16 @@ export default function Hero({
           >
             {userLang === "fr-FR" ? "Télécharger mon CV" : "Download my resume"}
           </a>
-          <a
-            href="#"
-            onClick={(e) => handleSectionClick(e, "projects")}
-            className=" bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade transition-colors"
+          <Link
+            className="cursor-pointer select-none bg-lShade  text-dShade p-2 rounded-md font-bold hover:bg-mBrand hover:text-lShade transition-colors"
+            to="projects"
+            smooth={true}
+            offset={0}
+            duration={500}
+            spy={true}
           >
             {userLang === "fr-FR" ? "Voir mes projets" : "See my projects"}
-          </a>
+          </Link>
         </div>
       </section>
       <div className=" relative wave-bg  w-full h-16 top-1 bg-dDark"></div>
