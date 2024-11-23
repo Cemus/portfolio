@@ -34,7 +34,7 @@ export default function Hero({
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [handleSectionDynamicChange, selectedSection]);
 
   return (
     <Element name="home">

@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
 import { useRef, useEffect } from "react";
-import ProjectTemplate from "../Sections/Projects/ProjectTemplate";
+import ProjectTemplate from "../sections/Projects/ProjectTemplate";
 import cvCreatorImage from "../../assets/projects/cv-creator.png";
 import imageBoardImage from "../../assets/projects/image-board.png";
 import shoppingCart from "../../assets/projects/shopping-cart.png";

@@ -172,7 +172,7 @@ export default function ProjectTemplate({
             <div className="flex flex-wrap justify-center">
               {stack.map((tech: Technology) => {
                 const DynamicIcon = lazy(() =>
-                  import("../../Icones/Icones").then((module) => ({
+                  import("../../icones/Icones").then((module) => ({
                     default: module[tech],
                   }))
                 );
@@ -212,7 +212,7 @@ export default function ProjectTemplate({
             <div className="flex flex-wrap justify-center">
               {stack.map((tech: Technology) => {
                 const DynamicIcon = lazy(() =>
-                  import("../../Icones/Icones").then((module) => ({
+                  import("../../icones/Icones").then((module) => ({
                     default: module[tech],
                   }))
                 );

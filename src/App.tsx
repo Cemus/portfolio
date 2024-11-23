@@ -2,10 +2,10 @@ import { useState } from "react";
 import { scroller } from "react-scroll";
 import Hero from "./components/Hero";
 import Header from "./components/Header";
-import Projects from "./components/Sections/Projects";
-import About from "./components/Sections/About";
+import Projects from "./components/sections/Projects";
+import About from "./components/sections/About";
 import Footer from "./components/Footer";
-import Contacts from "./components/Sections/Contacts";
+import Contacts from "./components/sections/Contacts";
 
 function App() {
   const [selectedSection, setSelectedSection] = useState<string>("home");

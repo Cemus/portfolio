@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
 import { useEffect, useRef } from "react";
-import { GitHubIcon, LinkedInIcon } from "../Icones/Icones";
+import { GitHubIcon, LinkedInIcon } from "../icones/Icones";
 
 export default function Contacts({
   userLang,

@@ -35,7 +35,7 @@ export default function About({
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [handleSectionDynamicChange, selectedSection]);
 
   return (
     <Element name="about">
