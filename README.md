@@ -6,7 +6,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Unlicense License][license-shield]][license-url]
+[![License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 </div>
@@ -144,8 +144,8 @@ Pour installer ce projet localement, il faut suivre ces étapes simples.
 [stars-url]: https://github.com/Cemus/portfolio/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Cemus/portfolio.svg?style=for-the-badge
 [issues-url]: https://github.com/Cemus/portfolio/issues
-[license-shield]: https://img.shields.io/github/license/Cemus/portfolio.svg?style=for-the-badge
-[license-url]: https://github.com/Cemus/portfolio/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/Cemus/portfolio?style=for-the-badge
+[license-url]: https://github.com/Cemus/portfolio/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/kevin-lionnet/
 [screenshot-url]: screenshot.png
