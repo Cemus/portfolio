@@ -66,7 +66,7 @@ export default function Contacts({ userLang }: { userLang: string }) {
                 <a href="https://github.com/Cemus" target="_blank">
                   <GitHubIcon />
                 </a>
-                <a href="https://linkedin.com/in/kévin-lionnet" target="_blank">
+                <a href="https://linkedin.com/in/kevin-lionnet" target="_blank">
                   <LinkedInIcon />
                 </a>
               </div>
