@@ -1,5 +1,5 @@
 import { Element, Link } from "react-scroll";
-import pdf from "../../assets/CV Kévin Lionnet 2024.pdf";
+import pdf from "../../assets/CV Kévin Lionnet 2025.pdf";
 
 export default function Hero({ userLang }: { userLang: string }) {
   return (
